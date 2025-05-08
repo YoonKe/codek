@@ -1,0 +1,42 @@
+<!-- src/main/resources/META-INF/plugin.xml -->
+<idea-plugin>
+    <!-- 插件唯一 ID，使用你的包名 -->
+    <id>com.steins.codek</id>
+    <!-- 插件名称 -->
+    <name>CodeK Assistant</name>
+    <!-- 插件开发者 -->
+    <vendor email="your.email@example.com" url="https://yourwebsite.com">Steins</vendor>
+
+    <!-- 插件描述 -->
+    <description><![CDATA[
+    IntelliJ IDEA 插件，用于辅助编程，集成大模型、本地向量库、文件操作和对话功能。<br>
+    <em>由 CodeK 提供支持</em>
+    ]]></description>
+
+    <!-- 声明对 IntelliJ Platform 核心模块的依赖 -->
+    <depends>com.intellij.modules.platform</depends>
+    <!-- 如果需要操作 Java 代码，添加 Java 插件依赖 -->
+    <depends>com.intellij.modules.java</depends>
+
+    <!-- 插件扩展点 -->
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- 注册一个 Tool Window -->
+        <toolWindow factoryClass="com.steins.codek.ui.CodekToolWindowFactory"
+                    id="CodeK Assistant"
+                    anchor="right"/>
+                    <!-- icon="/icons/pluginIcon.svg"/> --> 
+                    <!-- anchor 指定窗口默认停靠位置 (left, right, bottom) -->
+                    <!-- 暂时注释掉 icon，避免因缺少图标文件报错 -->
+
+        <!-- 注册应用级服务 -->
+        <applicationService serviceImplementation="com.steins.codek.config.CodekConfig"/>
+    </extensions>
+
+    <!-- (可选) 注册 Action -->
+    <!-- <actions> -->
+        <!-- <action id="com.steins.codek.actions.MyAction" class="com.steins.codek.actions.MyAction" text="My Action" description="My action description"> -->
+            <!-- <add-to-group group-id="ToolsMenu" anchor="last"/> -->
+        <!-- </action> -->
+    <!-- </actions> -->
+
+</idea-plugin> 

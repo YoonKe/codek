@@ -1,0 +1,13 @@
+# Ignore the roocode directory
+Roo-Code/
+
+# Ignore the .build directory
+.build/
+build/
+
+.gradle/
+
+.idea/
+
+.cursorignore/
+
